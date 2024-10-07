@@ -16,7 +16,7 @@ public:
         // releaseHydrogen() outputs "H". Do not change or remove this line.
         releaseHydrogen();
         d++;
-        cv.notify_one();
+        cv.notify_all();
     }
 
     void oxygen(function<void()> releaseOxygen) {
@@ -27,6 +27,6 @@ public:
         // releaseOxygen() outputs "O". Do not change or remove this line.
         releaseOxygen();
         d-=2;
-        cv.notify_one();
+        cv.notify_all();
     }
 };
